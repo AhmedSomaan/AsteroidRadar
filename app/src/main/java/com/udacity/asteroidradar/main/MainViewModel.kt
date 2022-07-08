@@ -10,6 +10,7 @@ import com.udacity.asteroidradar.ImageOfDay
 import com.udacity.asteroidradar.R
 import com.udacity.asteroidradar.api.AsteroidApi
 import com.udacity.asteroidradar.api.AsteroidApiService
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
@@ -18,8 +19,8 @@ class MainViewModel : ViewModel() {
     val asteroidList: LiveData<List<Asteroid>>
         get() = _asteroidList
 
-    private val _imageOfDay = MutableLiveData<ImageOfDay>()
-    val imageOfDay: LiveData<ImageOfDay>
+    private val _imageOfDay = MutableLiveData<Deferred<ImageOfDay>>()
+    val imageOfDay: LiveData<Deferred<ImageOfDay>>
         get() = _imageOfDay
 
 
